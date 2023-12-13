@@ -25,25 +25,9 @@ const playEpisode = (link, serverData, epIndex) => {
           @click="playEpisode(ep.link_embed, ep, epIndex)"
         >
           <font-awesome-icon icon="fa-solid fa-play" />
-          <span>Eps {{ ep.name }} </span>
           <!-- {{ ep.filename }} -->
         </a>
       </li>
     </ul>
   </div>
 </template>
-
-<style scoped>
-/*=============== SCROLL BAR ===============*/
-::-webkit-scrollbar {
-  width: 0.6rem;
-  /* border-radius: 0.5rem; */
-  background: rgb(20, 27, 36);
-}
-
-::-webkit-scrollbar-thumb {
-  height: 80px;
-  background: rgb(255, 185, 45);
-  border-radius: 0.5rem;
-}
-</style>

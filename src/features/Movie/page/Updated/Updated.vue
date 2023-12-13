@@ -17,20 +17,17 @@ const fetchMovies = async (currPage) => {
     const { items, status, pagination } = await movieApi.getAll(currPage);
     const { totalItemsPerPage, currentPage, totalPages: totalPagesApi, totalItems: totalItemsApi } = pagination;
 
-    console.log(totalPages);
     totalItems.value = totalItemsApi;
     totalPages.value = totalPagesApi;
     itemsPerPage.value = totalItemsPerPage;
 
     if (status) {
       isLoading.value = false;
-      console.log(items);
       movies.value = items;
     }
   } catch (error) {
     isLoading.value = false;
     errorMsg.value(error);
-    console.error(error);
   }
 };
 fetchMovies(currentPage.value);
